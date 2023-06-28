@@ -98,7 +98,7 @@ const USER_CONFIG = {
     {
       name: '小黑',
       id: '9ca5f2e3e428403fb932f3bec6ebd783',
-      useTemplateId: '',
+      useTemplateId: '0001',
       province: '',
       city: '',
       horoscopeDate: '',
@@ -118,7 +118,7 @@ const USER_CONFIG = {
     {
       name: '自己',
       // 使用微信测试号：自己的微信id，扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: 'oVn-A6QnrnM-1vkMe85LgldUchT8',
+      id: '9ca5f2e3e428403fb932f3bec6ebd783',
     }
   ],
 
