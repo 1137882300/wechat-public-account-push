@@ -4,36 +4,56 @@
 name: weixin-push-on-time
 
 on:
+  # 手动运行工作流程
   workflow_dispatch:
+  # 定时触发
   schedule:
     # 每天国际时间 23:30 运行, 即北京时间 7:30 运行
     - cron: '30 23 * * *'
     
 jobs:
+  # 这个build 指的是第一个任务的名称
   build:
-
+    # 指定运行所需要的虚拟机环境。必填字段
     runs-on: ubuntu-latest
 
     strategy:
+      # matrix：构建一个任务组合矩阵
       matrix:
         node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    # 指定每个 Job 的运行步骤，可以包含一个或多个步骤。
     steps:
     # 添加定时任务指定运行分支 默认为master
+    # uses : 使用哪个 action
+    # actions/checkout@v2，表示使用actions/checkout仓库，版本为v2，引用公有库中的 action
+    # 引用action的格式为 {username}/{repo}@{res} ，使用checkout action可以自动拉取项目仓库的代码。
     - uses: actions/checkout@v3
+      # with : 指定某个 action 可能需要输入的参数
       with:
           ref: 'master'
-          
+      # name: 步骤名称
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    # run: 该步骤运行的命令
     - run: npm ci
     - run: npm run dev --if-present
+    # env: 该步骤所需的环境变量
     env: 
       APP_ID: ${{secrets.APP_ID}}
       APP_SECRET: ${{secrets.APP_SECRET}}
       USER_INFO: ${{secrets.USER_INFO}}
 
+# steps: id : 每个步骤的唯一标识符
+# steps: continue-on-error : 设置为 true 允许此步骤失败 job 仍然通过
+# steps: timeout-minutes : step 的超时分钟数
+# strategy: fail-fast：一旦矩阵某个任务执行失败，就取消所有矩阵任务，默认为true
+# 基本概念
+# workflow （工作流程）：持续集成一次运行的过程，就是一个 workflow。
+#   job （任务）：一个 workflow 由一个或多个 jobs 构成，含义是一次持续集成的运行，可以完成多个任务。
+#   step（步骤）：每个 job 由多个 step 构成，一步步完成。
+#   action （动作）：每个 step 可以依次执行一个或多个命令（action）。
