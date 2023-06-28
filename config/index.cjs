@@ -80,15 +80,13 @@ const USER_CONFIG = {
       festivals: [
         // 注意：此条配置日期为阴历日期，因为`type`中 “生日” 之前有 * 符号
         {
-          type: '*生日', name: '宝贝', year: '1996', date: '09-09',
+          type: '*生日', name: '小黑', year: '1996', date: '11-23',
         },
         // 注意：此条配置日期为阳历日期，因为`type`中 “生日” 之前没有 * 符号
         {
-          type: '生日', name: '李四', year: '1996', date: '09-31',
+          type: '生日', name: '小螃蟹', year: '1998', date: '12-23',
         },
-        {
-          type: '节日', name: '相识纪念日', year: '2020', date: '09-03',
-        },
+      
       ],
       // 我们在一起已经有xxxx天了的配置
       customizedDateList: [
@@ -98,6 +96,19 @@ const USER_CONFIG = {
         { keyword: 'marry_day', date: '2022-09-09' },
       ],
     },
+    {
+      name: '小黑',
+      id: '9ca5f2e3e428403fb932f3bec6ebd783',
+      useTemplateId: '',
+      province: '',
+      city: '',
+      horoscopeDate: '',
+      horoscopeDateType: '',
+      openUrl: 'https://wangxinleo.cn',
+      festivals: [],
+      customizedDateList: [],
+      courseSchedule: null
+    }
   ],
 
 
