@@ -202,7 +202,7 @@ export const getHolidaytts = async () => {
   const url = 'https://wangxinleo.cn/api/wx-push/holiday/getHolidaytts'
   const res = await axios.get(url).catch((err) => err)
 
-  if (res.status === 200 && res.data && res.data.code === 0) {
+  if (res.data && res.data.code === 0) {
     return res.data.tts
   }
   console.error('获取下一休息日tts: 发生错误', res)
@@ -446,7 +446,7 @@ export const getCourseSchedule = (courseSchedule) => {
     .set('millisecond', 0), 'millisecond')
   const isSameKind = Math.floor(diff / 7 / 86400000) % 2 === 0
   const kind = ((isSameKind && courseSchedule.benchmark.isOdd) || (!isSameKind && !courseSchedule.benchmark.isOdd)) ? 'odd' : 'even'
-  
+
   const temp = ((courseSchedule.courses && courseSchedule.courses[kind] && courseSchedule.courses[kind][week]) || [])
   const schedule = temp.join(getLB())
   const wechatTestCourseSchedule = []
@@ -454,11 +454,11 @@ export const getCourseSchedule = (courseSchedule) => {
     wechatTestCourseSchedule.push({
       name: toLowerLine(`wxCourseSchedule_${index}`),
       value: item,
-      color: getColor()
+      color: getColor(),
     })
   })
 
-  return {schedule, wechatTestCourseSchedule}
+  return { schedule, wechatTestCourseSchedule }
 }
 
 /**
@@ -515,7 +515,6 @@ export const getBirthdayMessage = (festivals) => {
   })
   let resMessage = ''
   const wechatTestBirthdayMessage = []
-  
 
   birthdayList.forEach((item, index) => {
     if (
@@ -556,13 +555,13 @@ export const getBirthdayMessage = (festivals) => {
         wechatTestBirthdayMessage.push({
           name: toLowerLine(`wxBirthday_${index}`),
           value: message,
-          color: getColor()
+          color: getColor(),
         })
       }
     }
   })
 
-  return {resMessage, wechatTestBirthdayMessage}
+  return { resMessage, wechatTestBirthdayMessage }
 }
 
 /**
@@ -757,7 +756,7 @@ export const getAggregatedData = async () => {
     const constellationFortune = await getConstellationFortune(user.horoscopeDate, user.horoscopeDateType)
 
     // 获取课表信息
-    const {schedule:courseSchedule, wechatTestCourseSchedule} = getCourseSchedule(user.courseSchedule || config.courseSchedule) || DEFAULT_OUTPUT.courseSchedule
+    const { schedule: courseSchedule, wechatTestCourseSchedule } = getCourseSchedule(user.courseSchedule || config.courseSchedule) || DEFAULT_OUTPUT.courseSchedule
 
     // 天行-早晚安
     const tianApiGreeting = [{
