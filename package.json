@@ -1,7 +1,7 @@
 {
   "name": "wechat-public-account-push",
   "version": "1.0.0",
-  "description": "微信公众号推送-给女朋友的浪漫",
+  "description": "微信公众号推送",
   "main": "main.js",
   "type": "module",
   "scripts": {
