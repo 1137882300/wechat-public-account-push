@@ -6,7 +6,7 @@ const TEMPLATE_CONFIG = [
     desc: `
       {{date.DATA}}<br>
       <strong>{{moment_copyrighting.DATA}}</strong><br>
-      今天是我们相识的第<strong>{{love_day.DATA}}</strong>天<br>
+      今天是我们相识的第<strong>{{love_day.DATA}}</strong>天<br>，爱你❤️
       下个休息日：{{holidaytts.DATA}}<br>
       城市：{{city.DATA}}<br>
       天气☁️：{{weather.DATA}} <br>
@@ -26,6 +26,33 @@ const TEMPLATE_CONFIG = [
       ---
       
       《{{poetry_title.DATA}}》 {{poetry_content.DATA}}
+    `
+  },
+  {
+    id: '0003',
+    title: '小黑',
+    desc: `
+        🗓️{{date.DATA}}
+        
+        今天是我们在一起的第{{love_day.DATA}}天，爱你❤️
+        
+        今日{{city.DATA}}天气☁️：{{weather.DATA}}
+        
+        温度🌡️: {{min_temperature.DATA}}-{{max_temperature.DATA}}
+        
+        风向：{{wind_direction.DATA}}
+        
+        风级：{{wind_scale.DATA}}
+        
+        湿度：{{shidu.DATA}}
+        
+        空气质量：{{aqi.DATA}}
+        
+        预防感冒提醒：{{ganmao.DATA}}
+        
+        下一休息日：{{holidaytts.DATA}}
+        
+        下一个心动日：{{birthday_message.DATA}}
     `
   },
   {

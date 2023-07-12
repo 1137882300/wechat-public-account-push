@@ -98,7 +98,7 @@ const USER_CONFIG = {
     {
       name: '小黑',
       id: '9ca5f2e3e428403fb932f3bec6ebd783',
-      useTemplateId: '0001',
+      useTemplateId: '0003',
       province: '',
       city: '',
       horoscopeDate: '',
