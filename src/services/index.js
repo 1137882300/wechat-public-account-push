@@ -199,7 +199,7 @@ export const getHolidaytts = async () => {
     return null
   }
 
-  const url = 'https://wangxinleo.cn/api/wx-push/holiday/getHolidaytts'
+  const url = 'http://wangxinleo.cn/api/wx-push/holiday/getHolidaytts'
   const res = await axios.get(url).catch((err) => err)
 
   if (res.status === 200 && res.data && res.data.code === 0) {
