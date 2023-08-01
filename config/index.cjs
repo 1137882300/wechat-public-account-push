@@ -110,6 +110,18 @@ const USER_CONFIG = {
     }
   ],
 
+  SLOT_LIST: [
+    // 这样配置的话，就会每次发送这句话
+    { keyword: 'fitness', contents: '今日需要健身哦' },
+    // 这样配置的话，就会每次随机选一句话发送
+    {
+      keyword: 'slimming',
+      contents: [
+        '今日需要减肥哦'
+      ],
+    }
+    // 你可以不断按格式往下增加
+  ],
 
   // 【推送完成提醒】模板id, 用来看自己有没有发送成功的那个模板
   CALLBACK_TEMPLATE_ID: '0002',

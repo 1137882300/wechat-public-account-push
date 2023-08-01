@@ -5,6 +5,9 @@ const TEMPLATE_CONFIG = [
     title: '小螃蟹,哈喽哇',
     desc: `
       {{date.DATA}}<br>
+      
+      📌{{slimming.DATA}}
+      
       <strong>{{moment_copyrighting.DATA}}</strong><br>
       今天是我们相识的第<strong>{{love_day.DATA}}</strong>天<br>，爱你❤️
       下个休息日：{{holidaytts.DATA}}<br>
@@ -34,7 +37,7 @@ const TEMPLATE_CONFIG = [
     desc: `
         🗓️{{date.DATA}}
         
-        今天是我们在一起的第{{love_day.DATA}}天，爱你❤️
+        📌{{fitness.DATA}}
         
         今日{{city.DATA}}天气☁️：{{weather.DATA}}
         
@@ -59,11 +62,11 @@ const TEMPLATE_CONFIG = [
     id: '0002',
     title: '推送完成提醒',
     desc: `
-      推送结果
+      《推送结果》
       
       服务器信息：{{post_time_zone.DATA}} {{post_time.DATA}}
-      ---
-      共推送 {{need_post_num.DATA}} 人
+   
+      共推送： {{need_post_num.DATA}} 人
       
       成功: {{success_post_num.DATA}}
       
