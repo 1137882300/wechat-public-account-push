@@ -598,8 +598,11 @@ export const getSlotList = () => {
 
   slotList.forEach((item) => {
     if (Object.prototype.toString.call(item.contents) === '[object Array]' && item.contents.length > 0) {
+      // Math.floor() 用于将小数向下取整，得到一个整数值。
+      // 随机选择一个元素
       item.checkout = item.contents[Math.floor(Math.random() * item.contents.length + 1) - 1]
     } else if (Object.prototype.toString.call(item.contents) === '[object String]') {
+      // Object.prototype.toString.call(item.contents): 获取 contents 属性的类型
       item.checkout = item.contents
     } else {
       item.checkout = ''

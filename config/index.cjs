@@ -111,9 +111,9 @@ const USER_CONFIG = {
   ],
 
   SLOT_LIST: [
-    // 这样配置的话，就会每次发送这句话
+    // 1.String类型：这样配置的话，就会每次发送这句话
     { keyword: 'fitness', contents: '今日需要健身哦' },
-    // 这样配置的话，就会每次随机选一句话发送
+    // 2.数组类型：这样配置的话，就会每次随机选一句话发送
     {
       keyword: 'slimming',
       contents: [
