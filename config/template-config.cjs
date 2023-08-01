@@ -4,24 +4,37 @@ const TEMPLATE_CONFIG = [
     id: '0001',
     title: '小螃蟹,哈喽哇',
     desc: `
-      {{date.DATA}}<br>
+      🗓️{{date.DATA}}
       
       📌{{slimming.DATA}}
       
-      <strong>{{moment_copyrighting.DATA}}</strong><br>
+      <strong>{{moment_copyrighting.DATA}}</strong> 
+      
       今天是我们相识的第<strong>{{love_day.DATA}}</strong>天<br>，爱你❤️
-      下个休息日：{{holidaytts.DATA}}<br>
-      城市：{{city.DATA}}<br>
-      天气☁️：{{weather.DATA}} <br>
-      温度🌡️: {{min_temperature.DATA}} ~ {{max_temperature.DATA}}<br>
-      风向: {{wind_direction.DATA}}<br>
-      风级: {{wind_scale.DATA}}<br>
-      温馨提示：{{notice.DATA}}<br>
+      
+      下个休息日：{{holidaytts.DATA}} 
+      
+      城市：{{city.DATA}} 
+      
+      天气☁️：{{weather.DATA}}  
+      
+      温度🌡️: {{min_temperature.DATA}} ~ {{max_temperature.DATA}}
+      
+      风向: {{wind_direction.DATA}}
+      
+      风级: {{wind_scale.DATA}}
+      
+      预防感冒提醒：{{ganmao.DATA}}
+      
+      温馨提示：{{notice.DATA}}
+      
       值得纪念💗：
       {{birthday_message.DATA}} 
       
-      每日一句😋：<br>
-      中文：{{note_ch.DATA}}<br>
+      每日一句😋：
+      
+      中文：{{note_ch.DATA}}
+      
       英文：{{note_en.DATA}}
       
       {{comprehensive_horoscope.DATA}}
